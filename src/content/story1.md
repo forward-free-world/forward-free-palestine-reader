@@ -1,9 +1,7 @@
 ---
-[//]:# (Title: Importing custom file types)
-[//]:# (Tags: #angular, #import)
-[//]:# (Link: https://netbasal.com/simplifying-file-imports-in-angular-with-new-loader-options-4e94a0eb18af)
+[//]:# (Title: Welcome to Hell)
+[//]:# (Tags: #warcrimes, #torture, #abuse, #children)
+[//]:# (Link: https://www.btselem.org/publications/202408_welcome_to_hell)
 ---
 
-# Importing Custom file types
-
-[Angular](https://angular.dev) has good native support for json files imports. This article describes typescript and Angular configurations required to import custom file types.
+Testimonies captured in a August 2024 report by the B'Tselem Israeli Information Center for Human Rights in the Occupied Territories. Terrible abuse and torture suffered by adults and children alike.

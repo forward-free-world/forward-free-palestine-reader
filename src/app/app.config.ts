@@ -21,6 +21,6 @@ export const appConfig: ApplicationConfig = {
       useExisting: DiskPostReader
     },
     { provide: MARKDOWN_CONVERTER, useFactory: () => new Showdown.Converter() },
-    { provide: SITE_TITLE, useValue: 'post reader' }
+    { provide: SITE_TITLE, useValue: 'forward free palestine' }
   ]
 };
