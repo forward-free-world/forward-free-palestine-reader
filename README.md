@@ -2,6 +2,8 @@
 
 [![Deployment to Github Pages](https://github.com/forward-free-world/forward-free-palestine-reader/actions/workflows/npm-publish-github-packages.yml/badge.svg)](https://github.com/forward-free-world/forward-free-palestine-reader/actions/workflows/npm-publish-github-packages.yml)
 
+[https://forward-free-world.github.io/forward-free-palestine-reader/](https://forward-free-world.github.io/forward-free-palestine-reader/)
+
 ## How to Contribute an Article or Post (Hyperlink)
 
 _For points (7) to (10) see the example template below list this._
