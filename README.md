@@ -54,9 +54,3 @@ _Example template_
 ## Websites known to prevent Web Scraping
 1. [www.btselem.org](https://www.btselem.org)
 
-## Things to do
-
-- [ ] Better Youtube scraping
-- [ ] Process relative image url's correctly
-- [ ] Launch page on AI toggle
-- [ ] Persist toggle preference
