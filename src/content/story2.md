@@ -1,8 +1,7 @@
 ---
-[//]:# (Title: Americans in Jerusalem Are Helping Kick Out Palestinians)
-[//]:# (Tags: #ethniccleansing, #complicity)
-[//]:# (Link: https://www.youtube.com/watch?v=kbPnF8Hvj0I&ab_channel=AJ%2B)
-[//]:# (Image: https://img.youtube.com/vi/kbPnF8Hvj0I/sddefault.jpg)
+[//]:# (Title: Welcome to Hell)
+[//]:# (Tags: #warcrimes, #torture, #abuse, #children)
+[//]:# (Link: https://www.btselem.org/publications/202408_welcome_to_hell)
+[//]:# (Image: https://www.btselem.org/sites/default/files/styles/huge/public/2024-08/wth-cover-en_0.png)
 ---
-
-In exclusive footage obtained by AJ+, a group of Americans were filmed installing wiring and a fence around the land just outside the Salem family home in occupied East Jerusalem.
+Testimonies captured in a August 2024 report by the B'Tselem Israeli Information Center for Human Rights in the Occupied Territories document terrible abuse and torture suffered by adults and children alike.
