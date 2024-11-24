@@ -1,10 +1,10 @@
-# Forward Free Palestine
+# Voices of Gaza
 
 [![Deployment to Github Pages](https://github.com/forward-free-world/forward-free-palestine-reader/actions/workflows/npm-publish-github-packages.yml/badge.svg)](https://github.com/forward-free-world/forward-free-palestine-reader/actions/workflows/npm-publish-github-packages.yml)<a href="https://techforpalestine.org/learn-more">
     <img alt="Tech for Palestine" src="https://badge.techforpalestine.org/default">
   </a>
 
-[https://forward-free-world.github.io/forward-free-palestine-reader/](https://forward-free-world.github.io/forward-free-palestine-reader/)
+[https://voicesofgaza.org.za](https://voicesofgaza.org.za)
 
 ## How to submit your Post
 
