@@ -1,6 +1,6 @@
 ---
 [//]:# (Title: Welcome to Hell)
-[//]:# (Tags: #warcrimes, #torture, #abuse, #children)
+[//]:# (Tags: #warcrimes, #abuse, #children)
 [//]:# (Link: https://www.btselem.org/publications/202408_welcome_to_hell)
 [//]:# (Image: https://www.btselem.org/sites/default/files/styles/huge/public/2024-08/wth-cover-en_0.png)
 ---
