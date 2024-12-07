@@ -27,11 +27,11 @@ async function readMdFilesFromDirectory(directoryPath: string): Promise<string[]
       const [, link] = LinkRegex.exec(markdown) ?? [null, null];
       if (link && PrepareContentConfig.blacklistScraping.every(blacklist => !link.includes(blacklist))) {
         const scraped = await fetch(link).then(response => response.text());
-        const { document }: { document: HTMLElement } = new JSDOM(scraped).window;
+        const { document }: { document: HTMLDocument } = new JSDOM(scraped).window;
 
         if (scraped) {
           markdown = enrichWithScrapedData(markdown, document);
-          summarise(link);
+          summarise(link, document.body.textContent);
         }
       }
 
@@ -45,7 +45,11 @@ async function readMdFilesFromDirectory(directoryPath: string): Promise<string[]
   }
 }
 
-function summarise(url: string) {
+function summarise(url: string, text: string | null) {
+  if (!text) {
+    return;
+  }
+
   const summariesFolder = './out/summaries';
   let results: string[] = [];
   try {
@@ -63,7 +67,7 @@ function summarise(url: string) {
 
   fetch(env.SUMMARISEAPI as string, {
     body: JSON.stringify({
-      url,
+      text,
       min_length: 100,
       max_length: 300,
       is_detailed: false
@@ -119,7 +123,7 @@ function summarise(url: string) {
     });
 }
 
-function enrichWithScrapedData(markdown: string, document: HTMLElement) {
+function enrichWithScrapedData(markdown: string, document: HTMLDocument) {
   const [, mdTitle] = TitleRegex.exec(markdown) ?? [null, null],
     [, mdImage] = ImageRegex.exec(markdown) ?? [null, null],
     scrapedTitle = document.querySelector('h1')?.innerHTML ?? '',
@@ -157,7 +161,7 @@ type ScoredHtmlImage = HtmlImage & {
   score: number;
 };
 
-function getImages(document: HTMLElement): ScoredHtmlImage[] {
+function getImages(document: HTMLDocument): ScoredHtmlImage[] {
   const images: HtmlImage[] = [];
 
   document.querySelectorAll('img').forEach(img => {
