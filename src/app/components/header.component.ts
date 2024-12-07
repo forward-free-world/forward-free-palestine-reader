@@ -8,7 +8,7 @@ import { SITE_TITLE } from '../tokens/site-title.token';
   selector: 'app-header',
   template: `<header>
     <h1>{{ siteTitle }}</h1>
-    <div>
+    <!-- <div>
       <app-toggle [toggled]="toggled" [caption]="caption" (toggledChange)="toggledChange.emit($event)"></app-toggle>
       <lucide-icon
         name="info"
@@ -19,7 +19,7 @@ import { SITE_TITLE } from '../tokens/site-title.token';
 &middot; Toggle once to display AI summaries for all
 &middot; Toggle twice to display user-submitted & AI summaries"
       ></lucide-icon>
-    </div>
+    </div> -->
   </header>`,
   styles: [
     `
