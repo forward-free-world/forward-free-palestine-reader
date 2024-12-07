@@ -74,6 +74,13 @@ function summarise(url: string) {
     },
     method: 'POST'
   })
+    .then(response => {
+      if (!response.ok) {
+        throw response;
+      } else {
+        return response;
+      }
+    })
     .then(response => response.json())
     .then((response: TldrDTO) => {
       const {
@@ -106,8 +113,9 @@ function summarise(url: string) {
         );
       }
     })
-    .catch(e => {
-      console.warn(`Could not fetch summary for ${url}, because ${e}`);
+    .catch(async response => {
+      const error = await response.json();
+      console.warn(`Could not fetch summary for ${url}, because ${error.message}`);
     });
 }
 

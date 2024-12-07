@@ -63,8 +63,14 @@ export class PostComponent implements AfterViewInit {
   }
 
   private async getSummary(link: string): Promise<TldrDTO> {
-    const filename = btoa(link),
+    let summary: { default: TldrDTO };
+    const filename = btoa(link);
+
+    try {
       summary = await import(`../../../../out/summaries/${filename}.json`);
+    } catch {
+      summary = { default: { summary: [] } };
+    }
 
     return summary.default;
   }
