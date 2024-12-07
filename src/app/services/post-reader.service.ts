@@ -44,7 +44,7 @@ export class DiskPostReader implements IPostReader {
   }
 
   private loadPostsFromDisk(): Post[] {
-    return post.default.split('\n%%%break%%%\n').map(this.parsePosts);
+    return post.default.split('\n%%%break%%%\n').map(this.parsePosts).reverse();
   }
 
   private parsePosts(rawPost: string): Post {

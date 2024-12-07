@@ -75,8 +75,8 @@ function summarise(url: string) {
     method: 'POST'
   })
     .then(response => response.json())
-    .then(
-      ({
+    .then((response: TldrDTO) => {
+      const {
         summary,
         article_title,
         article_authors,
@@ -84,29 +84,28 @@ function summarise(url: string) {
         article_pub_date,
         article_url,
         article_abstract
-      }: TldrDTO) => {
-        console.info(`Caching ${url}`);
-        if (summary?.length) {
-          fs.writeFile(
-            `${summariesFolder}/${filename}`,
-            JSON.stringify({
-              summary,
-              article_title,
-              article_authors,
-              article_image,
-              article_pub_date,
-              article_url,
-              article_abstract
-            }) ?? '',
-            e => {
-              if (e) {
-                console.error(e);
-              }
+      } = response;
+      console.info(`Caching ${url}`);
+      if (summary?.length) {
+        fs.writeFile(
+          `${summariesFolder}/${filename}`,
+          JSON.stringify({
+            summary,
+            article_title,
+            article_authors,
+            article_image,
+            article_pub_date,
+            article_url,
+            article_abstract
+          }) ?? '',
+          e => {
+            if (e) {
+              console.error(e);
             }
-          );
-        }
+          }
+        );
       }
-    )
+    })
     .catch(e => {
       console.warn(`Could not fetch summary for ${url}, because ${e}`);
     });
