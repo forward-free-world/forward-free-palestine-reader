@@ -9,6 +9,8 @@ const { JSDOM } = jsdom;
 import { PrepareContentConfig } from './prepare-content-config';
 require('dotenv').config();
 
+const readSummary = false;
+
 // Function to read all MD files from a directory
 async function readMdFilesFromDirectory(directoryPath: string): Promise<string[]> {
   try {
@@ -31,7 +33,9 @@ async function readMdFilesFromDirectory(directoryPath: string): Promise<string[]
 
         if (scraped) {
           markdown = enrichWithScrapedData(markdown, document);
-          summarise(link);
+          if (readSummary) {
+            summarise(link);
+          }
         }
       }
 
