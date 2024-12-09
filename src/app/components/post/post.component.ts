@@ -39,11 +39,11 @@ export class PostComponent implements AfterViewInit {
   @Input()
   set post(post: Post) {
     this.markdown = this.markdownToHtml(post.comment);
-    this.getSummary(post.link ?? '').then(tldr => {
-      const { summary } = tldr;
-      this.summary = summary?.length ? summary[0] : '';
-      this.spy.detectChanges();
-    });
+    // this.getSummary(post.link ?? '').then(tldr => {
+    //   const { summary } = tldr;
+    //   this.summary = summary?.length ? summary[0] : '';
+    //   this.spy.detectChanges();
+    // });
     this._post = post;
   }
   get post(): Post {
@@ -62,16 +62,16 @@ export class PostComponent implements AfterViewInit {
     return this.markdownConverter.makeHtml(m);
   }
 
-  private async getSummary(link: string): Promise<TldrDTO> {
-    let summary: { default: TldrDTO };
-    const filename = btoa(link);
+  // private async getSummary(link: string): Promise<TldrDTO> {
+  //   let summary: { default: TldrDTO };
+  //   const filename = btoa(link);
 
-    try {
-      summary = await import(`../../../../out/summaries/${filename}.json`);
-    } catch {
-      summary = { default: { summary: [] } };
-    }
+  //   try {
+  //     summary = await import(`../../../../out/summaries/${filename}.json`);
+  //   } catch {
+  //     summary = { default: { summary: [] } };
+  //   }
 
-    return summary.default;
-  }
+  //   return summary.default;
+  // }
 }
