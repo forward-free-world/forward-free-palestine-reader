@@ -111,11 +111,12 @@ lucide-icon {
 
 [data-tooltip] {
   position: relative;
-  cursor: help;
+  // cursor: help;
 }
 
 [data-tooltip]::after {
   position: absolute;
+  display: inline-block;
   line-height: 1.2rem;
   opacity: 0;
   pointer-events: none;
@@ -127,14 +128,25 @@ lucide-icon {
   color: #fff;
   z-index: 100;
   padding: 8px;
-  width: 300px;
+  max-width: 300px;
+  white-space: nowrap;
   transform: translateY(-20px);
   transition: all 150ms cubic-bezier(0.25, 0.8, 0.25, 1);
-  white-space: pre-wrap;
 }
 
 [data-tooltip]:hover::after {
   opacity: 1;
   transform: translateY(0);
   transition-duration: 300ms;
+}
+
+.default-modal-container {
+  display: block;
+  max-width: var(--site-width);
+  background: var(--red);
+  border-radius: 8px;
+  padding: 20px;
+  position: relative;
+  box-shadow: 0 0 16px 1px rgba(1, 1, 1, 0.4);
+  color: #fff;
 }

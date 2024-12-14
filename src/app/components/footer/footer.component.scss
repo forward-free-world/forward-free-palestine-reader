@@ -1,0 +1,48 @@
+:host {
+  display: flex;
+  padding: 9px 15px;
+  background: #fff;
+  justify-content: center;
+  align-items: center;
+
+  > div {
+    width: var(--site-width);
+    display: flex;
+    align-items: center;
+    gap: 30px;
+  }
+
+  lucide-icon {
+    cursor: pointer;
+  }
+
+  a,
+  span {
+    display: inline-block;
+    line-height: 1rem;
+  }
+
+  .unicode {
+    font-size: 23px;
+    &:after {
+      font-size: initial;
+    }
+  }
+
+  a {
+    color: #000;
+    text-decoration: none;
+  }
+
+  [data-tooltip]::after {
+    font-size: 0.8rem;
+    top: auto;
+    bottom: calc(100% + 10px);
+  }
+}
+
+h2 {
+  font-weight: 500;
+  margin: 0 0 30px;
+  color: #fff;
+}

@@ -1,15 +1,4 @@
-:host {
-  display: flex;
-  position: fixed;
-  justify-content: center;
-  align-items: center;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  padding: 15px;
-  background: rgba(1, 1, 1, 0.05);
-
+form {
   @media screen and (max-width: 640px) {
     font-size: 0.8rem;
     input,
@@ -18,15 +7,6 @@
       font-size: 1em;
     }
   }
-}
-
-form {
-  display: block;
-  width: var(--site-width);
-  background: var(--red);
-  border-radius: 8px;
-  padding: 20px;
-  position: relative;
 }
 
 textarea,
@@ -62,13 +42,4 @@ h2 {
   font-weight: 500;
   margin: 0 0 30px;
   color: #fff;
-}
-
-lucide-icon {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  padding: 10px;
-  cursor: pointer;
-  color: rgba(255, 255, 255, 0.8);
 }

@@ -13,8 +13,7 @@ type EmailForm = {
   standalone: true,
   imports: [FormsModule, LucideAngularModule],
   template: `
-    <form (ngSubmit)="formSubmit.emit({email, message, name})">
-      <lucide-icon name="x" [size]="20" [strokeWidth]="3" (click)="close.emit()"></lucide-icon>
+    <form (ngSubmit)="formSubmit.emit({email, message, name})" class="default-modal-container">
       <h2 class="figtree-400">Contact us</h2>
       <input [(ngModel)]="name" name="name" placeholder="Your name (optional)" />
       <input [(ngModel)]="email" name="email" placeholder="Your email (optional)" />
@@ -30,6 +29,5 @@ export class EmailFormComponent {
   message!: string;
   name!: string;
 
-  @Output() close = new EventEmitter();
   @Output() formSubmit = new EventEmitter<EmailForm>();
 }

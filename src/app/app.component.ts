@@ -8,7 +8,7 @@ import { POST_READER } from './tokens/post-reader.token';
 import { PostComponent } from './components/post/post.component';
 import { PostQuery } from './models/post-query';
 import { Toggle } from './models/toggle';
-import { FooterComponent } from './components/footer.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 @Component({
   selector: 'app-root',

@@ -1,7 +1,7 @@
 import { ApplicationConfig, importProvidersFrom, provideZoneChangeDetection } from '@angular/core';
 import { provideRouter } from '@angular/router';
 import { provideClientHydration } from '@angular/platform-browser';
-import { LucideAngularModule, Info, Mail, Wand, X } from 'lucide-angular';
+import { LucideAngularModule, BookOpen, Info, Mail, Scale, Wand, X } from 'lucide-angular';
 import Showdown from 'showdown';
 
 import { DiskPostReader } from './services/post-reader.service';
@@ -15,7 +15,7 @@ export const appConfig: ApplicationConfig = {
     provideZoneChangeDetection({ eventCoalescing: true }),
     provideRouter(routes),
     provideClientHydration(),
-    importProvidersFrom(LucideAngularModule.pick({ Info, Mail, Wand, X })),
+    importProvidersFrom(LucideAngularModule.pick({ BookOpen, Info, Mail, Scale, Wand, X })),
     {
       provide: POST_READER,
       useExisting: DiskPostReader
