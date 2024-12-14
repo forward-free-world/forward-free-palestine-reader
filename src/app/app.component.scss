@@ -28,9 +28,21 @@ app-header {
   right: 0;
 }
 
+app-footer {
+  position: fixed;
+  bottom: 0px;
+  left: 0;
+  right: 0;
+}
+
+app-header,
+app-footer {
+  box-shadow: 0 0 10px 1px rgba(1, 1, 1, 0.2);
+}
+
 #back-to-top {
   position: fixed;
-  bottom: 75px;
+  bottom: 65px;
   left: 0;
   right: 0;
   width: 120px;

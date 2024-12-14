@@ -13,11 +13,7 @@ import { LucideAngularModule } from 'lucide-angular';
   styles: `
   :host {
     display: flex;
-    position: fixed;
-    bottom: 0px;
-    left: 0;
-    right: 0;
-    height: 60px;
+    padding: 9px 15px;
     background: #fff;
     justify-content: center;
     align-items: center;

@@ -7,7 +7,17 @@
   left: 0;
   right: 0;
   bottom: 0;
+  padding: 15px;
   background: rgba(1, 1, 1, 0.05);
+
+  @media screen and (max-width: 640px) {
+    font-size: 0.8rem;
+    input,
+    textarea,
+    button {
+      font-size: 1em;
+    }
+  }
 }
 
 form {
