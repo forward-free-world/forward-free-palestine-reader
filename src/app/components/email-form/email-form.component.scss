@@ -1,0 +1,63 @@
+:host {
+  display: flex;
+  position: fixed;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(1, 1, 1, 0.05);
+}
+
+form {
+  display: block;
+  width: var(--site-width);
+  background: var(--red);
+  border-radius: 8px;
+  padding: 20px;
+  position: relative;
+}
+
+textarea,
+input {
+  width: 100%;
+  background: rgba(1, 15, 1, 0.1);
+  padding: 15px;
+  border-radius: 6px;
+  color: #fff;
+  box-sizing: border-box;
+  margin-bottom: 12px;
+  &:focus-visible {
+    outline: 0;
+  }
+  &::placeholder {
+    color: #fff;
+  }
+}
+
+button {
+  background: rgba(255, 255, 255, 0.99);
+  padding: 10px 15px;
+  border-radius: 6px;
+  color: var(--red);
+  box-sizing: border-box;
+  font-weight: bold;
+  &[disabled] {
+    opacity: 0.6;
+  }
+}
+
+h2 {
+  margin: 0 0 30px;
+  color: #fff;
+}
+
+lucide-icon {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  padding: 10px;
+  cursor: pointer;
+  color: rgba(255, 255, 255, 0.8);
+}

@@ -8,11 +8,12 @@ import { POST_READER } from './tokens/post-reader.token';
 import { PostComponent } from './components/post/post.component';
 import { PostQuery } from './models/post-query';
 import { Toggle } from './models/toggle';
+import { FooterComponent } from './components/footer.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, FilterComponent, CommonModule, PostComponent, HeaderComponent],
+  imports: [RouterOutlet, FilterComponent, CommonModule, PostComponent, HeaderComponent, FooterComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })

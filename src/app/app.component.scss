@@ -18,7 +18,7 @@
   justify-content: center;
   gap: 30px;
   max-width: var(--site-width);
-  margin: 0 auto;
+  margin: 0 auto 120px;
 }
 
 app-header {
@@ -30,7 +30,7 @@ app-header {
 
 #back-to-top {
   position: fixed;
-  bottom: 30px;
+  bottom: 75px;
   left: 0;
   right: 0;
   width: 120px;

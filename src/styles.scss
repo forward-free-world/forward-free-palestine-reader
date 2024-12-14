@@ -17,6 +17,9 @@ body {
 }
 
 .figtree-400,
+input,
+textarea,
+div,
 h1,
 p,
 span,
@@ -74,6 +77,18 @@ ul.unstyled {
       content: " ";
     }
   }
+}
+
+button,
+textarea,
+input {
+  appearance: none;
+  border: 0;
+  font-size: 1rem;
+}
+
+button {
+  cursor: pointer;
 }
 
 a,
