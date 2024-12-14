@@ -14,7 +14,7 @@ type EmailForm = {
   imports: [FormsModule, LucideAngularModule],
   template: `
     <form (ngSubmit)="formSubmit.emit({email, message, name})" class="default-modal-container">
-      <h2 class="figtree-400">Contact us</h2>
+      <h2 class="figtree-500">Contact us</h2>
       <input [(ngModel)]="name" name="name" placeholder="Your name (optional)" />
       <input [(ngModel)]="email" name="email" placeholder="Your email (optional)" />
       <textarea [(ngModel)]="message" name="message" placeholder="Your message" rows="10"></textarea>

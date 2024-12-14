@@ -17,6 +17,7 @@ body {
 }
 
 .figtree-400,
+.figtree-500,
 input,
 textarea,
 div,
@@ -29,6 +30,10 @@ ul {
   font-optical-sizing: auto;
   font-weight: 300;
   font-style: normal;
+}
+
+.figtree-500 {
+  font-weight: 500;
 }
 
 .uchen-regular,
