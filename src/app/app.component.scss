@@ -12,13 +12,28 @@
   margin: 30px auto 20px;
 }
 
-#post-list {
+#skeleton-list,
+#post-columns {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: 30px;
   max-width: var(--site-width);
   margin: 0 auto 120px;
+  gap: 30px;
+}
+
+#skeleton-list {
+  flex-wrap: wrap;
+  > * {
+    flex: 1 1 485px;
+  }
+}
+
+.post-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 30px;
+  min-width: 0;
+  flex: 1 1 0;
 }
 
 app-header {

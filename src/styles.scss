@@ -7,6 +7,9 @@ html {
   --site-width: 500px;
   --green: #009736;
   --red: #ee2a35;
+  @media screen and (min-width: 1367px) {
+    --site-width: 1000px;
+  }
 }
 
 body {

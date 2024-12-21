@@ -12,11 +12,23 @@
   }
 </ul>
 
-<ul id="post-list" class="unstyled">
-  @for(post of posts.getPosts(postQuery) | async; track post) {
-  <li><app-post [post]="post" [content]="content" (tagSelected)="clickTag($event)"></app-post></li>
+@if(loading) {
+<div id="skeleton-list">
+  @for(i of [1, 2, 3, 4, 5, 6]; track i) {
+  <app-skeleton-post />
   }
-</ul>
+</div>
+} @else {
+<div id="post-columns">
+  @for(postColumn of posts.getPosts(postQuery) | async | postsColumn:columns; track postColumn) {
+  <ul class="post-list unstyled">
+    @for(post of postColumn; track post) {
+    <li><app-post [post]="post" [content]="content" (tagSelected)="clickTag($event)"></app-post></li>
+    }
+  </ul>
+  }
+</div>
+}
 
 <app-footer />
 

@@ -1,28 +1,57 @@
-import { ChangeDetectorRef, Component, HostBinding, HostListener, inject, PLATFORM_ID } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
-import { CommonModule, isPlatformBrowser } from '@angular/common';
-import { FilterComponent } from './components/filter.component';
-import { HeaderComponent } from './components/header.component';
+import { ChangeDetectorRef, Component, HostBinding, HostListener, inject, OnInit, PLATFORM_ID } from '@angular/core';
+import { CommonModule, DOCUMENT, isPlatformBrowser } from '@angular/common';
+import { BreakpointObserver } from '@angular/cdk/layout';
+import { filter, map } from 'rxjs';
 import { Content } from './models/content';
+import { FilterComponent } from './components/filter.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { HeaderComponent } from './components/header.component';
 import { POST_READER } from './tokens/post-reader.token';
 import { PostComponent } from './components/post/post.component';
 import { PostQuery } from './models/post-query';
+import { PostsColumnPipe } from './pipes/post-column.pipe';
 import { Toggle } from './models/toggle';
-import { FooterComponent } from './components/footer/footer.component';
+import { SkeletonPostComponent } from './components/skeleton-post/skeleton-post.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, FilterComponent, CommonModule, PostComponent, HeaderComponent, FooterComponent],
+  imports: [
+    CommonModule,
+    FilterComponent,
+    FooterComponent,
+    HeaderComponent,
+    PostComponent,
+    PostsColumnPipe,
+    SkeletonPostComponent
+  ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
+  columns = 1;
   content: Content = 'human';
+  loading = true;
   postQuery: PostQuery = {};
   posts = inject(POST_READER);
   spy = inject(ChangeDetectorRef);
   toggled: Toggle = 'off';
+  private readonly breakpointObserver = inject(BreakpointObserver);
+  private readonly platformId = inject(PLATFORM_ID);
+
+  ngOnInit() {
+    this.breakpointObserver
+      .observe(['(min-width: 1366px)'])
+      .pipe(
+        map(({ matches }) => (matches ? 2 : 1)),
+        filter(() => isPlatformBrowser(this.platformId))
+      )
+      .subscribe(columns => {
+        this.columns = columns;
+        this.loading = false;
+        this.spy.detectChanges();
+      });
+  }
 
   @HostBinding('class.scrolled') scrolled = false;
 
@@ -34,8 +63,6 @@ export class AppComponent {
     }
     this.scrolled = scrollPosition > 40;
   }
-
-  private platformId = inject(PLATFORM_ID);
 
   clickTag(tag: string) {
     const { tags = [] } = this.postQuery;
@@ -61,6 +88,15 @@ export class AppComponent {
     return this.postQuery.tags?.includes(tag) ?? false;
   }
 
+  scrollToTop() {
+    if (isPlatformBrowser(this.platformId)) {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    }
+  }
+
   updateContent(toggle: Toggle) {
     this.toggled = toggle;
     switch (toggle) {
@@ -73,15 +109,6 @@ export class AppComponent {
       case 'on':
         this.content = 'machine';
         break;
-    }
-  }
-
-  scrollToTop() {
-    if (isPlatformBrowser(this.platformId)) {
-      window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-      });
     }
   }
 }
