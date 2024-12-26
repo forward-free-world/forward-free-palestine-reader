@@ -1,6 +1,7 @@
 import { ApplicationConfig, importProvidersFrom, provideZoneChangeDetection } from '@angular/core';
 import { provideRouter } from '@angular/router';
 import { provideClientHydration } from '@angular/platform-browser';
+import { provideHttpClient } from '@angular/common/http';
 import { LucideAngularModule, BookOpen, Info, Mail, Scale, Wand, X } from 'lucide-angular';
 import Showdown from 'showdown';
 
@@ -15,6 +16,7 @@ export const appConfig: ApplicationConfig = {
     provideZoneChangeDetection({ eventCoalescing: true }),
     provideRouter(routes),
     provideClientHydration(),
+    provideHttpClient(),
     importProvidersFrom(LucideAngularModule.pick({ BookOpen, Info, Mail, Scale, Wand, X })),
     {
       provide: POST_READER,
