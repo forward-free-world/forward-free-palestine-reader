@@ -1,19 +1,11 @@
-import {
-  ChangeDetectionStrategy,
-  ChangeDetectorRef,
-  Component,
-  ComponentRef,
-  inject,
-  TemplateRef,
-  Type,
-  ViewChild
-} from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, inject, TemplateRef, ViewChild } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
+import { catchError, map, of } from 'rxjs';
 import { EmailFormComponent } from '../email-form/email-form.component';
 import { LucideAngularModule } from 'lucide-angular';
 import { ModalComponent } from '../modal/modal.component';
-import { catchError, map, of } from 'rxjs';
+import { environment } from '../../../environments/environment';
 
 @Component({
   selector: 'app-footer',
@@ -50,7 +42,7 @@ export class FooterComponent {
     }
 
     this.httpClient
-      .post('http://localhost:5284/mail', request, { responseType: 'text' })
+      .post(`${environment.mailerUrl}/mail`, request, { responseType: 'text' })
       .pipe(
         map(() => true),
         catchError(() => of(false))
