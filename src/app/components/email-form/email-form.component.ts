@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, EventEmitter, Output } from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { LucideAngularModule } from 'lucide-angular';
 
@@ -18,7 +18,8 @@ type EmailForm = {
       <input [(ngModel)]="name" name="name" placeholder="Your name (optional)" />
       <input [(ngModel)]="email" name="email" placeholder="Your email (optional)" />
       <textarea [(ngModel)]="message" name="message" placeholder="Your message" rows="10"></textarea>
-      <button [disabled]="!message">Send message</button>
+      <button [disabled]="!message || disabled">Send message</button>
+      <p class="feedback"><ng-content /></p>
     </form>
   `,
   styleUrl: './email-form.component.scss',
@@ -27,7 +28,14 @@ type EmailForm = {
 export class EmailFormComponent {
   email?: string;
   message!: string;
-  name!: string;
+  name?: string;
 
+  @Input() disabled = false;
   @Output() formSubmit = new EventEmitter<EmailForm>();
+
+  clearForm() {
+    this.email = undefined;
+    this.message = '';
+    this.name = undefined;
+  }
 }

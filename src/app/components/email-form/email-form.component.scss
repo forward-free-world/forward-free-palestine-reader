@@ -42,3 +42,13 @@ h2 {
   margin: 0 0 30px;
   color: #fff;
 }
+
+.feedback {
+  margin: 15px 0 0;
+  padding: 8px;
+  background: rgba(1, 1, 1, 0.1);
+  border-radius: 6px;
+  &:empty {
+    display: none;
+  }
+}

@@ -32,7 +32,11 @@
 }
 
 <ng-template #emailForm>
-  <app-email-form (formSubmit)="submit($event)" />
+  <app-email-form #emailFormComp [disabled]="inFlight" (formSubmit)="submit($event)">
+    @if(feedback) {
+    {{ feedback }}
+    }
+  </app-email-form>
 </ng-template>
 
 <ng-template #aboutUs>
