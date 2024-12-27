@@ -1,5 +1,5 @@
 ---
-[//]:# (Tags: #awareness, #community)
+[//]:# (Tags: #community)
 [//]:# (Link: https://techforpalestine.org)
 [//]:# (Image: https://techforpalestine.org/happy-kids.jpg)
 ---
